@@ -37,6 +37,17 @@
     </dependency>
     <!--spring-->
 
+
+    <!--hadoop-->
+    <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-common -->
+    <dependency>
+      <groupId>org.springframework.data</groupId>
+      <artifactId>spring-data-hadoop</artifactId>
+      <version>2.5.0.RELEASE</version>
+    </dependency>
+
+    <!--hadoop-->
+
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
