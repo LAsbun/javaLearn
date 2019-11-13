@@ -37,11 +37,11 @@ public class test0 {
   @Test
   public void initHdfs() throws IOException {
     Configuration configuration = new Configuration();
-    configuration.set("fs.defaultFS", "hdfs://127.0.0.1:8021");
+    configuration.set("fs.defaultFS", "hdfs://0.0.0.0:8021");
 
     FileSystem fileSystem = FileSystem.get(configuration);
-    fileSystem.create(new Path("/user/sws/"));
-    fileSystem.copyFromLocalFile(new Path("/tmp/.installer"), new Path("/user/sws/.installer"));
+//    fileSystem.create(new Path("/user"));
+    fileSystem.copyFromLocalFile(new Path("/tmp/sangfordnscmp.txt"), new Path("/user/sangfordnscmp.txt"));
     fileSystem.close();
   }
 
@@ -52,10 +52,10 @@ public class test0 {
 
     FileSystem fs = FileSystem.get(new URI("hdfs://hadoop001:8021"), configuration, "root");
 
-    fs.delete(new Path("hdfs://hadoop001:8021/user/sws/"));
+    fs.delete(new Path("hdfs://hadoop001:8021/users/sws/"));
 
     try {
-      boolean mkdirs = fs.mkdirs(new Path("hdfs://hadoop001:8021/user/sws/"));
+      boolean mkdirs = fs.mkdirs(new Path("hdfs://hadoop001:8021/users/sws/"));
 
       System.out.println("mkdir is " + mkdirs);
     } catch (FileAlreadyExistsException e) {
@@ -87,10 +87,10 @@ public class test0 {
     // 1 创建配置信息对象
     Configuration configuration = new Configuration();
 
-    FileSystem fs = FileSystem.get(new URI("hdfs://hadoop102:8020"), configuration, "atguigu");
+    FileSystem fs = FileSystem.get(new URI("hdfs://127.0.0.1:9000"), configuration, "atguigu");
 
     //2 创建目录
-    fs.mkdirs(new Path("hdfs://hadoop102:8020/user/atguigu/output"));
+    fs.mkdirs(new Path("hdfs://127.0.0.1:8020/user/atguigu/output"));
   }
 
 }
