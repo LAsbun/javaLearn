@@ -32,7 +32,7 @@ public class ConcurrentTest {
     }
 
     long time = System.currentTimeMillis() - start;
-    System.out.println("concurrency :" + time + "ms,b=" + b);
+    System.out.println("concurrency :" + time + "ms,MD5Util=" + b);
 
   }
 
@@ -67,7 +67,7 @@ public class ConcurrentTest {
     }
 
     long time = System.currentTimeMillis() - start;
-    System.out.println("concurrency :" + time + "ms,b=" + b);
+    System.out.println("concurrency :" + time + "ms,MD5Util=" + b);
 
   }
 
