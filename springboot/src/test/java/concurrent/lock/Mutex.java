@@ -1,7 +1,5 @@
 package concurrent.lock;
 
-import lombok.NoArgsConstructor;
-
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 import java.util.concurrent.locks.Condition;
@@ -81,27 +79,32 @@ public class Mutex implements Lock {
 //        Thread x = ObjectLock.class.newInstance();
 //        x.start();
 
-        Thread t1 = mutex.new FuncLock2(false, mutex);
-        Thread t2 = mutex.new FuncLock2(true, mutex);
-        Thread t3 = mutex.new FuncLock2(true, mutex);
+//        Thread t1 = mutex.new FuncLock2(false, mutex);
+//        Thread t2 = mutex.new FuncLock2(true, mutex);
+//        Thread t3 = mutex.new FuncLock2(true, mutex);
+//
+//
+//        t1.start();
+//        t2.start();
+//        t3.start();
+//        t1.join();
+//        t2.join();
+//        t3.join();
 
-
-        t1.start();
-        t2.start();
-        t3.start();
-        t1.join();
-        t2.join();
-        t3.join();
+        System.out.println(mutex.testFinally());
 
 
     }
 
-    private <T extends Thread> void runConcurrency(Class<T> t) throws IllegalAccessException, InstantiationException {
-        for (int i = 0; i < 10; i++) {
-            Thread o = t.newInstance();
-            o.start();
 
+    public boolean testFinally(){
+        try{
+            return true;
         }
+        finally {
+            System.out.println("dsadsa");
+        }
+
     }
 
     public class FuncLock2 extends Thread {
@@ -128,15 +131,15 @@ public class Mutex implements Lock {
         private void read() {
             mutex.lock();
             try {
-                System.out.println("read lock ing...");
-                for (int i = 0; i < 10; i++) {
+                System.out.println(Thread.currentThread().getName() + " read lock ing...");
+                for (int i = 0; i < 5; i++) {
                     System.out.println(mutex.sync.getQueuedThreads());
                     Thread.sleep(1000);
                 }
             } catch (Exception e) {
 
             } finally {
-                System.out.println("read lock end...");
+                System.out.println(Thread.currentThread().getName() + " read lock end...");
 
                 mutex.unlock();
             }
@@ -147,8 +150,8 @@ public class Mutex implements Lock {
             mutex.lock();
 
             try {
-                System.out.println("write lock ing..");
-                for (int i = 0; i < 10; i++) {
+                System.out.println(Thread.currentThread().getName() + " write lock ing..");
+                for (int i = 0; i < 5; i++) {
                     System.out.println(mutex.sync.getQueuedThreads());
                     Thread.sleep(1000);
                 }
@@ -156,14 +159,10 @@ public class Mutex implements Lock {
             } catch (Exception e) {
 
             } finally {
-                System.out.println("write end ing..");
+                System.out.println(Thread.currentThread().getName() + " write end ing..");
 
                 mutex.unlock();
             }
-        }
-
-        public FuncLock2() {
-            super();
         }
     }
 
