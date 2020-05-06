@@ -1,4 +1,4 @@
-package renntrantlocktest;
+package concurrent.lock.renntrantlocktest;
 
 import org.junit.Test;
 

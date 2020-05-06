@@ -1,4 +1,4 @@
-package deadlock;
+package concurrent.lock.deadlock;
 
 public class DeadLockDemo {
     private static String A = "A";
