@@ -18,6 +18,13 @@ public class Main {
 
     public static void main(String[] args) {
 
+        System.out.println(Runtime.getRuntime().maxMemory() / 1024 /1024);
+
+        String[] bytes = new String[1*1024*1024*1000];
+
+
+        System.out.println("xxx");
+
 //        ExecutorService threadPoolExecutor = new ThreadPoolExecutor(4, 4, 60, TimeUnit.SECONDS, new LinkedBlockingQueue<>());
 //
 //        for (int i = 0; i < 10; i++) {
@@ -42,10 +49,10 @@ public class Main {
 //
 //        threadPoolExecutor.shutdown();
 
-        A a = buildB();
-        a.setA(934);
-
-        System.out.println(JSONObject.toJSONString(a));
+//        A a = buildB();
+//        a.setA(934);
+//
+//        System.out.println(JSONObject.toJSONString(a));
     }
 
     public static B buildB(){

@@ -4,6 +4,8 @@ import org.apache.hadoop.util.hash.Hash;
 import org.junit.Test;
 
 import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author
@@ -106,6 +108,27 @@ public class ConcurrentTest {
         for (int i = 0; i < size; i++) {
             threads[i].join();
         }
+
+    }
+
+
+    @Test
+    public void testConcurrentHashMap(){
+
+        Map<String, String> cHmap = new ConcurrentHashMap<>(1);
+
+        cHmap.put("1", "1");
+        cHmap.put("2", "2");
+        cHmap.put("3", "3");
+        cHmap.put("4", "4");
+        cHmap.put("5", "5");
+        cHmap.put("6", "6");
+        cHmap.put("7", "7");
+        cHmap.put("8", "8");
+        cHmap.put("9", "9");
+        cHmap.put("10", "10");
+
+
 
     }
 
