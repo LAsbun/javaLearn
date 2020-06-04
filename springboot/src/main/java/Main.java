@@ -9,8 +9,16 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import springtest.MessageService;
+import springtest.UserService;
+import springtest.UserServiceImpl;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,14 +28,17 @@ import java.util.concurrent.*;
  * @author: louxiu@wacai.com
  * @create: 20190119 5:05 PM
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "springtest")
 @Slf4j
+//@ComponentScan(basePackages = {"springtest"})
 public class Main {
+
 
     public static void main(String[] args) {
 
-        testMybatis(args);
+//        testMybatis(args);
 
+        testSpringIOC();
 
 //        System.out.println(Runtime.getRuntime().maxMemory() / 1024 /1024);
 //
@@ -204,4 +215,18 @@ public class Main {
     }
 
 
+    private static void testSpringIOC() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:application.xml");
+        System.out.println("context start");
+
+        MessageService messageService = context.getBean(MessageService.class);
+
+        System.out.println(messageService.getMessage());
+    }
+
+
+//    @Bean
+//    public UserService userService() {
+//        return new UserServiceImpl();
+//    }
 }
