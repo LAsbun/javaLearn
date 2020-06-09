@@ -76,20 +76,20 @@ public class Mutex implements Lock {
         Mutex mutex = new Mutex();
 
 
-//        Thread x = ObjectLock.class.newInstance();
-//        x.start();
+        Thread x = ObjectLock.class.newInstance();
+        x.start();
 
-//        Thread t1 = mutex.new FuncLock2(false, mutex);
-//        Thread t2 = mutex.new FuncLock2(true, mutex);
-//        Thread t3 = mutex.new FuncLock2(true, mutex);
-//
-//
-//        t1.start();
-//        t2.start();
-//        t3.start();
-//        t1.join();
-//        t2.join();
-//        t3.join();
+        Thread t1 = mutex.new FuncLock2(false, mutex);
+        Thread t2 = mutex.new FuncLock2(true, mutex);
+        Thread t3 = mutex.new FuncLock2(true, mutex);
+
+
+        t1.start();
+        t2.start();
+        t3.start();
+        t1.join();
+        t2.join();
+        t3.join();
 
         System.out.println(mutex.testFinally());
 
