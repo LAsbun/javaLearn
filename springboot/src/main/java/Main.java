@@ -13,6 +13,9 @@ import springtest.MessageService;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -31,7 +34,16 @@ public class Main {
 
 //        testMybatis(args);
 
-        testSpringIOC();
+        List<String> tt = new ArrayList<>();
+
+        tt.add("xxx");
+
+        List<String> change = new TT(tt).change();
+
+        System.out.println(Arrays.toString(tt.toArray()));
+        System.out.println(Arrays.toString(change.toArray()));
+
+//        testSpringIOC();
 
 //        System.out.println(Runtime.getRuntime().maxMemory() / 1024 /1024);
 //
