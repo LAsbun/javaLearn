@@ -7,6 +7,18 @@
     <groupId>com.learning</groupId>
     <artifactId>spring-boot</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <name>spring boot source learning</name>
 
@@ -85,28 +97,35 @@
         </dependency>
 
         <!-- btrace -->
-<!--        <dependency>-->
-<!--            <groupId>com.sun.tools.btrace</groupId>-->
-<!--            <artifactId>btrace-agent</artifactId>-->
-<!--            <version>1.3.9</version>-->
-<!--            <scope>system</scope>-->
-<!--            <systemPath>/Users/sws/IdeaProjects/btrace/build/btrace-agent.jar</systemPath>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.sun.tools.btrace</groupId>-->
-<!--            <artifactId>btrace-boot</artifactId>-->
-<!--            <version>1.3.9</version>-->
-<!--            <scope>system</scope>-->
-<!--            <systemPath>/Users/sws/IdeaProjects/btrace/build/btrace-boot.jar</systemPath>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.sun.tools.btrace</groupId>-->
-<!--            <artifactId>btrace-client</artifactId>-->
-<!--            <version>1.3.9</version>-->
-<!--            <scope>system</scope>-->
-<!--            <systemPath>/Users/sws/IdeaProjects/btrace/build/btrace-client.jar</systemPath>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.sun.tools.btrace</groupId>-->
+        <!--            <artifactId>btrace-agent</artifactId>-->
+        <!--            <version>1.3.9</version>-->
+        <!--            <scope>system</scope>-->
+        <!--            <systemPath>/Users/sws/IdeaProjects/btrace/build/btrace-agent.jar</systemPath>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.sun.tools.btrace</groupId>-->
+        <!--            <artifactId>btrace-boot</artifactId>-->
+        <!--            <version>1.3.9</version>-->
+        <!--            <scope>system</scope>-->
+        <!--            <systemPath>/Users/sws/IdeaProjects/btrace/build/btrace-boot.jar</systemPath>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.sun.tools.btrace</groupId>-->
+        <!--            <artifactId>btrace-client</artifactId>-->
+        <!--            <version>1.3.9</version>-->
+        <!--            <scope>system</scope>-->
+        <!--            <systemPath>/Users/sws/IdeaProjects/btrace/build/btrace-client.jar</systemPath>-->
+        <!--        </dependency>-->
         <!-- btrace end -->
+
+        <!--load balance -->
+        <dependency>
+            <groupId>com.netflix.ribbon</groupId>
+            <artifactId>ribbon-loadbalancer</artifactId>
+            <version>2.2.2</version>
+        </dependency>
 
     </dependencies>
 </project>

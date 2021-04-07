@@ -1,7 +1,6 @@
 package stream;
 
 import org.junit.Test;
-import sun.security.util.ArrayUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;

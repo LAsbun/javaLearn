@@ -34,7 +34,7 @@ public class Main {
 
 //        testMybatis(args);
 
-        List<String> tt = new ArrayList<>();
+        List<String> tt = new ArrayList<String>();
 
         tt.add("xxx");
 
@@ -113,7 +113,7 @@ public class Main {
     }
 
 
-    final ThreadPoolExecutor executorService = new ThreadPoolExecutor(4, 50, 3, TimeUnit.SECONDS, new LinkedBlockingQueue<>(3));
+    final ThreadPoolExecutor executorService = new ThreadPoolExecutor(4, 50, 3, TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>(3));
 
 
     public void testEx() {
