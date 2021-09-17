@@ -96,6 +96,12 @@
             <version>4.1.30.Final</version>
         </dependency>
 
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>3.2.5</version>
+        </dependency>
+
         <!-- btrace -->
         <!--        <dependency>-->
         <!--            <groupId>com.sun.tools.btrace</groupId>-->
